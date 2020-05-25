@@ -1,4 +1,4 @@
-# AutoUpdateServer-Node
+# AutoUpdateServer-Node.js
 
 > 这是一个**简单的`post`服务**，可部署于服务器/云服务器，用于执行**自动化部署**。主要利用`GitHub Webhooks`。
 
