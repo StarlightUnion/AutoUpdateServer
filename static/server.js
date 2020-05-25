@@ -14,12 +14,12 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(cors());
 
-// hook 需选用 x-www-form-urlencoded
+// webhooks 需选用 x-www-form-urlencoded
 server.post('/api/update', (request, response) => {
   if (request) {
     // console.log(request.body);
     const repoName = JSON.parse(request.body.payload).repository.name
-    const cmd = `/documents/GitHub/${repoName}`;
+    const cmd = `/documents/GitHub/${repoName}`;// 本地仓库地址
 
     let res = '';
     const process = spawn('sh', ['update.sh', cmd]);
