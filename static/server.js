@@ -7,7 +7,7 @@ const spawn = require('child_process').spawn;
 
 const config = require('./config');// 配置
 const logger = config.logger;
-const HOST = config.SERVER;
+const HOST = config.HOST;
 const PORT = config.PORT;
 
 server.use(bodyParser.json());
@@ -27,7 +27,7 @@ server.post('/api/update', (request, response) => {
       const ds = data.toString();
 
       console.log(ds);
-      logger.error(ds);
+      logger.info(ds);
       res += ds;
     });
 

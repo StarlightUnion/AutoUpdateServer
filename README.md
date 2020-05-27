@@ -20,7 +20,7 @@ GitHub上的最新代码，从而实现**一次提交，服务器端自动化部
 ```js
 ...
 module.exports = {
-  SERVER: "127.0.0.1",// 云服务器要填写该服务器的内网IP
+  HOST: "127.0.0.1",// 云服务器要填写该服务器的内网IP
   PORT: 9000,
   logger: logger// 日志
 };
@@ -35,7 +35,18 @@ module.exports = {
 > * 云服务器的话`SERVER`需要填写服务器的内网地址，填写公网地址可能会报以下错误。
 ![error](images/error.png)
 
-### 2.开发环境部署
+### 2.设置`server.js`
+
+这里需要配置服务器上的**本地仓库的绝对地址**。
+
+```js
+...
+const repoName = JSON.parse(request.body.payload).repository.name
+const cmd = `/documents/GitHub/${repoName}`;// 本地仓库地址
+...
+```
+
+### 3.开发环境部署
 
 进入文件夹根目录：
 
@@ -44,7 +55,7 @@ npm install # 安装依赖
 npm run server # 启动服务
 ```
 
-### 3.服务器端常驻
+### 4.服务器端常驻
 
 安装`pm2`并运行`server.js`:
 
@@ -53,4 +64,3 @@ npm install pm2 -g
 # 进入static文件夹
 pm2 start server.js
 ```
-

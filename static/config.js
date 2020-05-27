@@ -26,7 +26,7 @@ const logger = createLogger({
 });
 
 module.exports = {
-  SERVER: "127.0.0.1",// 云服务器要填写该服务器的内网IP
+  HOST: "127.0.0.1",// 云服务器要填写该服务器的内网IP
   PORT: 9000,
   logger: logger
 };
