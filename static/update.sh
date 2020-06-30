@@ -1,4 +1,5 @@
 # shell cmd
+set -e
 
 echo 'start update...'
 # echo $1
