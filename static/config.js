@@ -11,13 +11,13 @@ const transport = new(transports.DailyRotateFile)({
   maxFiles: '14d',
   format: combine(
     label({
-        label: 'right meow!'
+      label: 'right meow!'
     }),
     timestamp(),
     prettyPrint()
   ),
 });
-transport.on('rotate', function (oldFilename, newFilename) {});
+transport.on('rotate', function(oldFilename, newFilename) {});
 
 const logger = createLogger({
   transports: [
@@ -26,7 +26,7 @@ const logger = createLogger({
 });
 
 module.exports = {
-  HOST: "127.0.0.1",// 云服务器要填写该服务器的内网IP
+  HOST: "127.0.0.1", // 云服务器要填写该服务器的内网IP
   PORT: 9000,
   logger: logger
 };
